@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="viewprot-fit:contain,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!-- <link rel="shortcut icon" href="./static//img//favio.png" type="image/x-icon"> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.2.0/vconsole.min.js"></script> -->
+		<!-- <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css"> -->
+		<title>H5开发项目经 HB 转译成 Native App</title>
+		<script>
+			// var vConsole = new VConsole();
+			//rem基数计算
+			function fontSize() {
+				var oHtml = document.getElementsByTagName('html')[0];
+				var view_width = oHtml.getBoundingClientRect().width;
+				var htmlfontsize = 0;
+				// 两种 rem 方法，一种是直接在 i6 下 规定 1 rem = 50 px,其余屏幕宽度按比例进行缩放
+				oHtml.style.fontSize = view_width / 7.5 + "px"
+				// oHtml.style.fontSize = view_width / 3.75 + "px"
+				// 另一种是 划定 区间,在某个区间内，1 rem = ? 进行换算
+				// view_width > 768 ? htmlfontsize = 50 * 768 / 375 : (view_width > 376 ? htmlfontsize = view_width * 48 / 375 : htmlfontsize = view_width * 50 / 375);
+				// oHtml.style.fontSize = (htmlfontsize < 70 ? htmlfontsize : 70) + "px";
+			}
+			fontSize();
+			window.onresize = function(){
+				fontSize();
+			}
+		</script>
+	</head>
+	<body>
+	<div id="app"></div>
+	<!-- built files will be auto injected -->
+	</body>
+</html>
